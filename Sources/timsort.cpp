@@ -63,7 +63,6 @@ void TimSort::insertionSort(int *array, int left, int right)
 void TimSort::merge(int *array, int l, int m, int r)
 {
 
-
     int len1 = m - l + 1;
     int len2 = r - m;
     int left[len1];

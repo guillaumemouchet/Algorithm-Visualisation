@@ -1,13 +1,28 @@
 #include "graph.h"
 
-Graph::Graph(int *array)
+Graph* Graph::instance = nullptr;
+
+Graph* Graph::getInstance()
 {
-    createChartView(array);
+    if(instance==nullptr)
+    {
+        instance = new Graph();
+    }
+    return instance;
 }
 
-void Graph::newChartView(int *array)
+Graph::Graph()
 {
-    createChartView(array);
+
+}
+
+void Graph::setSet(int *array)
+{
+    for(int i = 0; i < 10; i++)
+    {
+    set->replace(i, array[i]);
+    }
+    chartView->update();
 }
 
 void Graph::createSet(int *array)

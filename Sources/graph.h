@@ -10,11 +10,16 @@
 class Graph
 {
 public:
-    Graph(int *array);
+    static Graph *getInstance();
+
     QChartView *chartView;
     void createChartView(int *array);
+    void setSet(int *array);
 
+    Graph(Graph &other) = delete;
+    void operator=(const Graph &other) = delete;
 private:
+    Graph();
     void createSet(int *array);
     void createSeries();
     void createChart();
@@ -25,7 +30,10 @@ private:
     QBarSeries * series;
     QChart *chart;
     QValueAxis *axisY;
+    static Graph *instance;
 
 };
+
+
 
 #endif // GRAPH_H
