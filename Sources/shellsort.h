@@ -1,6 +1,8 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 
+#include <QList>
+#include <QEventLoop>
 #include "utils.h"
 
 

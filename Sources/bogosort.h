@@ -2,7 +2,9 @@
 #define BOGOSORT_H
 
 #include <time.h>
+#include <QRandomGenerator>
 #include "utils.h"
+
 
 class BogoSort
 {

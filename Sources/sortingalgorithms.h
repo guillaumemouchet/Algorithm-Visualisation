@@ -4,12 +4,14 @@
 #include <QVector>
 #include <QDebug>
 #include <QRandomGenerator>
+#include <QMainWindow>
 #include "bogosort.h"
 #include "fusionsort.h"
 #include "heapsort.h"
 #include "shellsort.h"
 #include "timsort.h"
 #include "utils.h"
+#include "insertionsort.h"
 
 class SortingAlgorithms
 {
@@ -26,7 +28,7 @@ public:
     void heapSort(int *array, int left, int right);
     void shellSort(int *array, int left, int right);
     void timSort(int *array, int left, int right);
-
+    void insertionSort(int *array, int left, int right);
 
 protected:
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

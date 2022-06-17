@@ -13,23 +13,27 @@ SOURCES += \
     fusionsort.cpp \
     graph.cpp \
     heapsort.cpp \
+    insertionsort.cpp \
     main.cpp \
     mainwindow.cpp \
     shellsort.cpp \
     sortingalgorithms.cpp \
     timsort.cpp \
-    utils.cpp
+    utils.cpp \
+    worker.cpp
 
 HEADERS += \
     bogosort.h \
     fusionsort.h \
     graph.h \
     heapsort.h \
+    insertionsort.h \
     mainwindow.h \
     shellsort.h \
     sortingalgorithms.h \
     timsort.h \
-    utils.h
+    utils.h \
+    worker.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -91,6 +91,8 @@ void HeapSort::startHeapSort(int *array, int left, int right)
         Utils::swap(array, left, j);
         j--;
         heapify(array, left, j);
+        Graph::getInstance()->setSet(array, left, right);
+        _sleep(1000);
     }
 
 }

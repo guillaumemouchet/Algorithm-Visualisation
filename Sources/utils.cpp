@@ -58,3 +58,8 @@ void Utils::swap(int *array, int i, int j)
     array[i] = array[j];
     array[j] = temp;
 }
+
+void Utils::updateGraph(int *array, int left, int right)
+{
+    Graph::getInstance()->setSet(array, left, right);
+}

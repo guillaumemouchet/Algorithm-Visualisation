@@ -55,6 +55,8 @@ void ShellSort::sortArrayByStep(int *array, int left, int right, int step)
             }
 
             array[l + step] = value;
+            Utils::updateGraph(array, left, right);
+            QThread::sleep(1);
         }
     }
 }

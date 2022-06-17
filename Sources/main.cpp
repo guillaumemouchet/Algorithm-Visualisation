@@ -8,60 +8,25 @@
 
 
 #include <QApplication>
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
-    /*
+
     QApplication a(argc, argv);
     MainWindow w;
-    w.show();*/
+    w.show();
 
     int array[10];
 
     Utils::fillArray(array, 0,9);
-    Utils::shuffleArray(array, 0,9);
     Utils::display(array,0,9);
 
     SortingAlgorithms *sa = new SortingAlgorithms();
 
     qDebug() << "HeapSort: ";
-    sa->heapSort(array, 0,9);
+    sa->timSort(array, 0,9);
     Utils::display(array,0,9);
-
-
-
-    int array[10];
-    HeapSort::fillArray(array, 0, 9);
-    SortingAlgorithms::display(array, 1, 9);
-    HeapSort::heapSort(array, 1, 9);
-    SortingAlgorithms::display(array, 1, 9);
-
-
-    qDebug() << "ShellSort";
-    ShellSort::fillArray(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-    ShellSort::shellSort(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-    qDebug()<<"merge sort";
-    int emptyArray[10];
-    FusionSort::fillArray(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-    FusionSort::fusionSort(array, emptyArray,0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-
-    qDebug()<<"bogo sort";
-    SortingAlgorithms::fillArray(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-    BogoSort::bogoSort(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-
-    qDebug()<<"Tim sort";
-    SortingAlgorithms::fillArray(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-    TimSort::timSort(array, 0, 9);
-    SortingAlgorithms::display(array, 0, 9);
-
-
 
 
     return a.exec();
