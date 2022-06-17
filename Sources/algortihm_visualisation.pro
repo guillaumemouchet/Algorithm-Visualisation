@@ -17,7 +17,8 @@ SOURCES += \
     mainwindow.cpp \
     shellsort.cpp \
     sortingalgorithms.cpp \
-    timsort.cpp
+    timsort.cpp \
+    utils.cpp
 
 HEADERS += \
     bogosort.h \
@@ -27,7 +28,8 @@ HEADERS += \
     mainwindow.h \
     shellsort.h \
     sortingalgorithms.h \
-    timsort.h
+    timsort.h \
+    utils.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

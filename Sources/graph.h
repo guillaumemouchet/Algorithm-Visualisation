@@ -13,13 +13,11 @@ public:
     Graph(int *array);
     QChartView *chartView;
     void createChartView(int *array);
-
 private:
     void createSet(int *array);
     void createSeries();
     void createChart();
     void createYAxis();
-
 
     QBarSet *set;
     QBarSeries * series;

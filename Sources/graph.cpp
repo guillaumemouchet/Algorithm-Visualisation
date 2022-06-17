@@ -5,11 +5,6 @@ Graph::Graph(int *array)
     createChartView(array);
 }
 
-void Graph::newChartView(int *array)
-{
-    createChartView(array);
-}
-
 void Graph::createSet(int *array)
 {
     set = new QBarSet("Test");
@@ -53,3 +48,5 @@ void Graph::createChartView(int *array)
     this->chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
 }
+
+

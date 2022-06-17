@@ -2,15 +2,15 @@
 #define HEAPSORT_H
 
 #include "sortingalgorithms.h"
+#include "utils.h"
 
 
-class HeapSort : public SortingAlgorithms
+class HeapSort
 {
 public:
 
     HeapSort();
     static void heapSort(int *array, int left, int right);
-    static void fillArray(int *array, int left, int right);
 
 private:
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

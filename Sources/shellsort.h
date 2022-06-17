@@ -1,10 +1,10 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 
+#include "utils.h"
 
-#include "sortingalgorithms.h"
 
-class ShellSort : public SortingAlgorithms
+class ShellSort
 {
 public:
     ShellSort();

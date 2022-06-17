@@ -2,10 +2,9 @@
 #define BOGOSORT_H
 
 #include <time.h>
-#include "sortingalgorithms.h"
+#include "utils.h"
 
-
-class BogoSort : public SortingAlgorithms
+class BogoSort
 {
 public:
     BogoSort();

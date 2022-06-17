@@ -6,62 +6,28 @@ SortingAlgorithms::SortingAlgorithms()
 
 
 }
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                           PUBLIC                            *
-\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-void SortingAlgorithms::display(int *array, int left, int right)
+void SortingAlgorithms::bogoSort(int *array, int left, int right)
 {
-    qDebug() << "[";
-    for (int i = left; i < right + 1; i++)
-    {
-        qDebug() << array[i];
-        if (i != right)
-        {
-            qDebug() << ", ";
-        }
-    }
-    qDebug() << "]";
+    BogoSort::bogoSort(array,left, right);
+}
+void SortingAlgorithms::fusionSort(int *array, int left, int right)
+{
+    int EmptyArray[right+1];
+    FusionSort::fusionSort(array,EmptyArray,left,right);
+}
+void SortingAlgorithms::heapSort(int *array, int left, int right)
+{
+    HeapSort::heapSort(array,left, right);
+}
+void SortingAlgorithms::shellSort(int *array, int left, int right)
+{
+    ShellSort::shellSort(array,left, right)
+}
+void SortingAlgorithms::timSort(int *array, int left, int right)
+{
+    TimSort::timSort(array,left, right);
 }
 
 
-void SortingAlgorithms::fillArray(int *array, int left, int right)
-{
-    int size = right - left + 1;
-    for(int i = 0; i< size; i++)
-    {
-        array[i] = i;
-    }
-    shuffleArray(array, left, right);
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                           PRIVATE                           *
-\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-/**
- * @brief SortingAlgorithms::shuffleArray
- * @param array
- * @param left
- * @param right
- *
- * @ref https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
- */
-void SortingAlgorithms::shuffleArray(int *array, int left, int right)
-{
-
-     for(int i = right; i > left; i--)
-     {
-         quint32 value = QRandomGenerator::global()->bounded(right-1) + 1;
-         swap(array, i, value);
-     }
-}
 
 
-void SortingAlgorithms::swap(int *array, int i, int j)
-{
-    int temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-}

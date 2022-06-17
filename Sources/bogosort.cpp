@@ -13,6 +13,7 @@ void BogoSort::bogoSort(int *array, int left, int right)
     // the array again
     while (!BogoSort::isSorted(array, left, right))
     {
+        //UPDATE LE CHARTSVIEW --> puis de le repaint
         BogoSort::shuffleBogo(array, left, right);
     }
 
