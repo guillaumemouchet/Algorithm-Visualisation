@@ -1,9 +1,9 @@
 #ifndef FUSIONSORT_H
 #define FUSIONSORT_H
 
-#include "sortingalgorithms.h"
+#include "utils.h"
 
-class FusionSort : public SortingAlgorithms
+class FusionSort
 {
 public:
     FusionSort();

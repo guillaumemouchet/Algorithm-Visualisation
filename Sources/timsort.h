@@ -3,10 +3,10 @@
 
 #include <time.h>
 #include <iostream>
-#include "sortingalgorithms.h"
+#include "utils.h"
 const int RUN = 32;
 
-class TimSort: public SortingAlgorithms
+class TimSort
 {
 public:
     TimSort();

@@ -4,6 +4,12 @@
 #include <QVector>
 #include <QDebug>
 #include <QRandomGenerator>
+#include "bogosort.h"
+#include "fusionsort.h"
+#include "heapsort.h"
+#include "shellsort.h"
+#include "timsort.h"
+#include "utils.h"
 
 class SortingAlgorithms
 {
@@ -15,18 +21,17 @@ public:
 
     SortingAlgorithms();
 
-    static void display(int *array, int left, int right);
-    static void heapSort(int *array, int left, int right);
-    static void fillArray(int *array, int left, int right);
+    void bogoSort(int *array, int left, int right);
+    void fusionSort(int *array, int left, int right);
+    void heapSort(int *array, int left, int right);
+    void shellSort(int *array, int left, int right);
+    void timSort(int *array, int left, int right);
+
 
 protected:
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
     *                           PROTECTED                           *
     \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-    static void swap(int *array, int i, int j);
-    static void shuffleArray(int *array, int left, int right);
-
 
 
 };

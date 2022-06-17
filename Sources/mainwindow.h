@@ -5,12 +5,9 @@
 #include <QMdiArea>
 #include <unistd.h>
 
+#include "utils.h"
+
 #include "sortingalgorithms.h"
-#include "shellsort.h"
-#include "heapsort.h"
-#include "fusionsort.h"
-#include "timsort.h"
-#include "bogosort.h"
 #include "graph.h"
 
 class MainWindow : public QMainWindow
@@ -24,7 +21,6 @@ public:
 
 
 private:
-    QMdiArea *mdiArea;
     Graph *graph;
 
 };

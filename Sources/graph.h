@@ -14,17 +14,19 @@ public:
 
     QChartView *chartView;
     void createChartView(int *array);
+<<<<<<< HEAD
     void setSet(int *array);
 
     Graph(Graph &other) = delete;
     void operator=(const Graph &other) = delete;
+=======
+>>>>>>> 4b773ed (First commit)
 private:
     Graph();
     void createSet(int *array);
     void createSeries();
     void createChart();
     void createYAxis();
-
 
     QBarSet *set;
     QBarSeries * series;

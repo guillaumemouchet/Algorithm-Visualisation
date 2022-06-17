@@ -20,15 +20,6 @@ void HeapSort::heapSort(int *array, int left, int right)
     startHeapSort(array, left, right);
 }
 
-void HeapSort::fillArray(int *array, int left, int right)
-{
-    int size = right - left + 1;
-    for(int i = 0; i< size; i++)
-    {
-        array[i] = i;
-    }
-    SortingAlgorithms::shuffleArray(array, left+1, right);
-}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
  *                           PRIVATE                           *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -51,7 +42,7 @@ void HeapSort::heapify(int *array, int i, int right)
         int maxSon = maxSons(array, root, nbrSons);
         if (array[maxSon] > array[root])
         {
-            swap(array, maxSon, root);
+            Utils::swap(array, maxSon, root);
             root = maxSon;
             nbrSons = getNbSons(maxSon, right);
         }
@@ -97,7 +88,7 @@ void HeapSort::startHeapSort(int *array, int left, int right)
     int j = right;
     while (j > left)
     {
-        swap(array, left, j);
+        Utils::swap(array, left, j);
         j--;
         heapify(array, left, j);
     }

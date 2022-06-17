@@ -11,6 +11,7 @@ Graph* Graph::getInstance()
     return instance;
 }
 
+<<<<<<< HEAD
 Graph::Graph()
 {
 
@@ -25,6 +26,8 @@ void Graph::setSet(int *array)
     chartView->update();
 }
 
+=======
+>>>>>>> 4b773ed (First commit)
 void Graph::createSet(int *array)
 {
     set = new QBarSet("Test");
@@ -68,3 +71,5 @@ void Graph::createChartView(int *array)
     this->chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
 }
+
+
