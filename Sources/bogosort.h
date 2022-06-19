@@ -5,11 +5,14 @@
 #include <QRandomGenerator>
 #include "utils.h"
 
-
+/**
+ * @brief The BogoSort class
+ * @ref https://www.geeksforgeeks.org/bogosort-permutation-sort/
+ * @def The Sorts class are static, no constructors are needed
+ */
 class BogoSort
 {
 public:
-    BogoSort();
     static void bogoSort(int *array, int left, int right);
 
 private:

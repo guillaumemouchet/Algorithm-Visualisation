@@ -35,15 +35,11 @@ void Utils::fillArray(int *array, int left, int right)
 
 /**
  * @brief SortingAlgorithms::shuffleArray
- * @param array
- * @param left
- * @param right
- *
+ * @param array, left, right
  * @ref https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
  */
 void Utils::shuffleArray(int *array, int left, int right)
 {
-
      for(int i = right; i > left; i--)
      {
          quint32 value = QRandomGenerator::global()->bounded(right-1) + 1;

@@ -1,9 +1,5 @@
 #include "heapsort.h"
 
-HeapSort::HeapSort()
-{
-
-}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
  *                           PUBLIC                            *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -23,7 +19,11 @@ void HeapSort::heapSort(int *array, int left, int right)
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
  *                           PRIVATE                           *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/**
+ * @brief HeapSort::init
+ * @param array, left, right
+ * @def initialize the heapsort, foreach parent we heapify
+ */
 void HeapSort::init(int *array, int left, int right)
 {
     for(int i = (right-left+1)/2; i >= 1; i--)
@@ -45,14 +45,22 @@ void HeapSort::heapify(int *array, int i, int right)
             Utils::swap(array, maxSon, root);
             root = maxSon;
             nbrSons = getNbSons(maxSon, right);
+            Utils::updateGraph(array, i, right);
+            QThread::msleep(100);
         }
         else
         {
             isMaximied = true;
         }
+
     }
 }
 
+/**
+ * @brief HeapSort::maxSons
+ * @param array, currentId, nbrOfSons
+ * @return the index of the biggest son
+ */
 int HeapSort::maxSons(int *array, int currentId, int nbrOfSons)
 {
     int leftSon = currentId * 2;
@@ -91,9 +99,11 @@ void HeapSort::startHeapSort(int *array, int left, int right)
         Utils::swap(array, left, j);
         j--;
         heapify(array, left, j);
-        Graph::getInstance()->setSet(array, left, right);
-        _sleep(1000);
+        Utils::updateGraph(array, left, right);
+        QThread::msleep(100);
     }
+    Utils::updateGraph(array, left, right);
+    QThread::msleep(100);
 
 }
 

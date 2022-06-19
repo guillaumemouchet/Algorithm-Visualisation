@@ -1,14 +1,10 @@
 #include "timsort.h"
 
-TimSort::TimSort()
-{
-
-}
 
 void TimSort::timSort(int *array, int left, int right)
 {
     int size = right-left + 1;
-    //Tri des sous tableau de size run
+    //Sort with the insertionSort smaller arrays of size RUN
         for (int i = 0; i < size; i += RUN)
             insertionSort(array, i, std::min((i + RUN - 1), (size - 1)));
 
@@ -55,8 +51,11 @@ void TimSort::insertionSort(int *array, int left, int right)
         {
             array[j + 1] = array[j];
             j--;
+            Utils::updateGraph(array, left, right);
+            QThread::msleep(75);
         }
         array[j + 1] = temp;
+        Utils::updateGraph(array, left, right);
     }
 }
 
@@ -87,11 +86,15 @@ void TimSort::merge(int *array, int l, int m, int r)
         {
             array[k] = left[i];
             i++;
+            Utils::updateGraph(array, l, r);
+            QThread::msleep(100);
         }
         else
         {
             array[k] = right[j];
             j++;
+            Utils::updateGraph(array, l, r);
+            QThread::msleep(100);
         }
         k++;
     }
@@ -102,6 +105,8 @@ void TimSort::merge(int *array, int l, int m, int r)
         array[k] = left[i];
         k++;
         i++;
+        Utils::updateGraph(array, l, r);
+        QThread::msleep(100);
     }
 
     // Copy remaining element of right, if any
@@ -110,6 +115,8 @@ void TimSort::merge(int *array, int l, int m, int r)
         array[k] = right[j];
         k++;
         j++;
+        Utils::updateGraph(array, l, r);
+        QThread::msleep(100);
     }
 }
 

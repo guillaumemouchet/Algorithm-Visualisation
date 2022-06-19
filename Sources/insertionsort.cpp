@@ -1,10 +1,13 @@
 #include "insertionsort.h"
 
-InsertionSort::InsertionSort()
-{
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PUBLIC                            *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-}
-
+/**
+ * @brief InsertionSort::insertionSort
+ * @param array, left, right
+ */
 void InsertionSort::insertionSort(int *array, int left, int right)
 {
     int temp, i ,j;
@@ -17,7 +20,7 @@ void InsertionSort::insertionSort(int *array, int left, int right)
             array[j + 1] = array[j];
             j--;
             Utils::updateGraph(array, left, right);
-            QThread::msleep(100);
+            QThread::msleep(75);
         }
         array[j + 1] = temp;
         Utils::updateGraph(array, left, right);

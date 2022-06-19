@@ -2,11 +2,13 @@
 #define FUSIONSORT_H
 
 #include "utils.h"
-
+/**
+ * @brief The FusionSort class
+ * @def The Sorts class are static, no constructors are needed
+*/
 class FusionSort
 {
 public:
-    FusionSort();
     static void fusionSort(int *array, int *emptyArray , int left, int right);
 private:
     static void merge(int *array, int *emptyArray, int left, int mid, int right);

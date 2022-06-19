@@ -17,17 +17,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    int array[10];
-
-    Utils::fillArray(array, 0,9);
-    Utils::display(array,0,9);
-
-    SortingAlgorithms *sa = new SortingAlgorithms();
-
-    qDebug() << "HeapSort: ";
-    sa->timSort(array, 0,9);
-    Utils::display(array,0,9);
-
-
     return a.exec();
 }

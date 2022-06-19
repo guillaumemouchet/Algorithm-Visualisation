@@ -7,7 +7,10 @@
 #include <QThread>
 #include <QEventLoop>
 #include "graph.h"
-
+/**
+ * @brief The Utils class
+ * @def static class used to help the algorithms with some functions
+ */
 class Utils
 {
 public:

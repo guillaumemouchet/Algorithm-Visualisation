@@ -1,15 +1,12 @@
 #include "fusionsort.h"
-
-FusionSort::FusionSort()
-{
-
-}
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PUBLIC                            *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 void FusionSort::fusionSort(int *array, int *emptyArray, int left, int right)
 {
     int mid;
     if (left < right){
-        //divide the array at mid and sort independently using merge sort
+        //find the middle of the array and sort both halfs independently with a merge sort
         mid=(left+right)/2;
         fusionSort(array,emptyArray,left,mid);
         fusionSort(array,emptyArray,mid+1,right);
@@ -18,6 +15,9 @@ void FusionSort::fusionSort(int *array, int *emptyArray, int left, int right)
     }
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PRIVATE                           *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 void FusionSort::merge(int *array, int *emptyArray, int left, int mid, int right)
 {
     int i, j, k;
@@ -31,12 +31,16 @@ void FusionSort::merge(int *array, int *emptyArray, int left, int mid, int right
             emptyArray[k] = array[i];
             k++;
             i++;
+            Utils::updateGraph(array, left, right);
+            QThread::msleep(75);
         }
         else
         {
             emptyArray[k] = array[j];
             k++;
             j++;
+            Utils::updateGraph(array, left, right);
+            QThread::msleep(75);
         }
     }
     while (i <= mid)
@@ -44,14 +48,20 @@ void FusionSort::merge(int *array, int *emptyArray, int left, int mid, int right
         emptyArray[k] = array[i];
         k++;
         i++;
+        Utils::updateGraph(array, left, right);
+        QThread::msleep(75);
     }
     while (j <= right)
     {
         emptyArray[k] = array[j];
         k++;
         j++;
+        Utils::updateGraph(array, left, right);
+        QThread::msleep(75);
     }
     for (i = left; i < k; i++)  {
         array[i] = emptyArray[i];
+        Utils::updateGraph(array, left, right);
+        QThread::msleep(75);
     }
 }

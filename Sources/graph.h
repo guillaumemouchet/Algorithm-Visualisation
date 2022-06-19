@@ -8,6 +8,9 @@
 #include <QtCharts/QChartView>
 #include <QCoreApplication>
 
+/**
+ * @brief The Singleton Graph class
+ */
 class Graph
 {
 public:

@@ -5,11 +5,14 @@
 #include <QEventLoop>
 #include "utils.h"
 
+/**
+ * @brief The ShellSort class
+ * @def The Sorts class are static, no constructors are needed
 
+ */
 class ShellSort
 {
 public:
-    ShellSort();
     static void shellSort(int *array, int left, int right);
 
 private:

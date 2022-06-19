@@ -1,26 +1,24 @@
 #include "bogosort.h"
 
-BogoSort::BogoSort()
-{
-
-}
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PUBLIC                            *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 void BogoSort::bogoSort(int *array, int left, int right)
 {
     srand(time(0));
 
-    // if array is not sorted then shuffle
-    // the array again
+    // While the array is not sorted, we shuffle it until we find the results
     while (!BogoSort::isSorted(array, left, right))
     {
-        //UPDATE LE CHARTSVIEW --> puis de le repaint
         Utils::updateGraph(array, left, right);
         QThread::msleep(100);
         BogoSort::shuffleBogo(array, left, right);
     }
 
 }
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PRIVATE                           *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 void BogoSort::shuffleBogo(int *array, int left, int right)
 {
     int size = right - left + 1;

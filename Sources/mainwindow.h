@@ -28,25 +28,29 @@ public:
 
 private:
     void createActions();
-    void createMenus();
     void createToolBars();
 
 
-    QAction *actInsertion, *actBogo, *actShuffle;
-    QMenu *menu;
+    QAction *actInsertion, *actBogo, *actFusion, *actHeap, *actTim, *actShell, *actShuffle;
 
     Graph *graph;
     SortingAlgorithms *sa;
 
+    // All the instances of sorts use the same array, so it has the same start and end index
     int left;
     int right;
     int *array;
 
+//Slots are used to help the display and know when a sort has started or ended
 public slots:
     void threadDone(bool success);
     void shuffleArray();
     void createInsertionWorker();
     void createBogoWorker();
+    void createFusionWorker();
+    void createHeapWorker();
+    void createTimWorker();
+    void createShellWorker();
 
 
 

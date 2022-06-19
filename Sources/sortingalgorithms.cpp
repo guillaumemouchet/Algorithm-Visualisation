@@ -6,6 +6,7 @@ SortingAlgorithms::SortingAlgorithms()
 
 
 }
+
 void SortingAlgorithms::bogoSort(int *array, int left, int right)
 {
     BogoSort::bogoSort(array,left, right);
@@ -27,7 +28,6 @@ void SortingAlgorithms::timSort(int *array, int left, int right)
 {
     TimSort::timSort(array,left, right);
 }
-
 void SortingAlgorithms::insertionSort(int *array, int left, int right)
 {
     InsertionSort::insertionSort(array, left, right);

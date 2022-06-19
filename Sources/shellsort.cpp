@@ -1,9 +1,9 @@
 #include "shellsort.h"
 
-ShellSort::ShellSort()
-{
 
-}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PUBLIC                            *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 void ShellSort::shellSort(int *array, int left, int right)
 {
@@ -11,11 +11,19 @@ void ShellSort::shellSort(int *array, int left, int right)
     QList<int> steps = getStep(size);
 
     for (int k = 0; k < steps.size(); k++)
+    {
         sortArrayByStep(array, left, right, steps.at(k));
+    }
+
 }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
+ *                           PRIVATE                           *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 QList<int> ShellSort::getStep(int size)
 {
+
     int pasMax = ceil(size / 9.0);
     QList<int> array;
 
@@ -26,11 +34,12 @@ QList<int> ShellSort::getStep(int size)
 
     while (currentPas < pasMax)
     {
-        //currentPas = currentPas * 3 + 1;
-        currentPas = pow(4,k)+3*pow(2,k-1)+1;
+        //currentPas = currentPas * 3 + 1; //Peterson and Russel
+        currentPas = pow(4,k)+3*pow(2,k-1)+1; //Sedgewick
         array.push_front(currentPas);
-    }
+        k++;
 
+    }
     return array;
 }
 
@@ -52,11 +61,15 @@ void ShellSort::sortArrayByStep(int *array, int left, int right, int step)
             {
                 array[l + step] = array[l];
                 l -= step;
+                Utils::updateGraph(array, left, right);
+                QThread::msleep(75);
+
             }
 
             array[l + step] = value;
             Utils::updateGraph(array, left, right);
-            QThread::sleep(1);
+            QThread::msleep(75);
+
         }
     }
 }

@@ -4,21 +4,18 @@
 #include "sortingalgorithms.h"
 #include "utils.h"
 
-
+/**
+ * @brief The HeapSort class
+ * @def The Sorts class are static, no constructors are needed
+ */
 class HeapSort
 {
 public:
-
-    HeapSort();
     static void heapSort(int *array, int left, int right);
 
 private:
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
-    *                           PRIVATE                           *
-    \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
-    *                           HEAPSORT                           *
+    *                           PRIVATE                            *
     \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     static void heapify(int *array, int i, int right);
